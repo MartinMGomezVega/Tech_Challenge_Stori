@@ -1,10 +1,15 @@
 git add .
 git commit -m "Actualizado"
 git push
+
 set GOOS=linux
 set GOARCH=amd64
+
 cd cmd
-go build main.go
+go build -o main main.go
 cd ..
+
 del main.zip
-tar.exe -a -cf main.zip build\main
+
+"C:\Program Files\Git\bin\tar.exe" -a -cf main.zip cmd/main
+
