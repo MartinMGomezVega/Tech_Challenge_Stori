@@ -2,7 +2,7 @@ package handler
 
 import (
 	"context"
-	"fmt"
+	"log"
 
 	"github.com/MartinMGomezVega/Tech_Challenge_Stori/lambda/go/CreateUserService/internal/processor"
 	"github.com/aws/aws-lambda-go/events"
@@ -19,7 +19,7 @@ func New(p *processor.Processor) *Handler {
 
 func (h *Handler) HandleRequest(ctx context.Context, request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResponse, error) {
 
-	fmt.Print("<start> <handler> <HandleRequest> Creating the user...")
+	log.Printf("<start> <handler> <HandleRequest> Creating the user...")
 
 	res := h.processor.Process(ctx, request)
 

@@ -2,7 +2,7 @@ package processor
 
 import (
 	"context"
-	"fmt"
+	"log"
 	"os"
 	"strings"
 
@@ -63,7 +63,7 @@ func (p Processor) Process(ctx context.Context, request events.APIGatewayProxyRe
 	awsgo.Ctx = context.WithValue(awsgo.Ctx, models.Key("bucketName"), os.Getenv("BucketName"))
 
 	if (awsgo.Ctx).Value(models.Key("path")).(string) != "uploadTransactionFile" {
-		fmt.Println("Conectando a la DB...")
+		log.Println("Conectando a la DB...")
 		// Chequeo Conexión a la BD o Conecto la BD
 		err = bd.ConectBD(awsgo.Ctx)
 		if err != nil {
