@@ -10,22 +10,6 @@ import (
 	"github.com/aws/aws-lambda-go/events"
 )
 
-type ICreateUser interface {
-	CreateUser(ctx context.Context, request events.APIGatewayProxyRequest) models.ResposeAPI
-}
-
-type createUser struct {
-}
-
-// CreateUser implements ICreateUser.
-func (createUser) CreateUser(ctx context.Context, request events.APIGatewayProxyRequest) models.ResposeAPI {
-	panic("unimplemented")
-}
-
-func NewCreateUser() ICreateUser {
-	return createUser{}
-}
-
 func CreateUser(ctx context.Context, request events.APIGatewayProxyRequest) models.ResposeAPI {
 	var u models.User
 	var r models.ResposeAPI

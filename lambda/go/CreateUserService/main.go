@@ -10,8 +10,7 @@ import (
 func main() {
 	log.Println("Start main")
 
-	h := handler.New()
-	lambda.Start(h)
+	lambda.Start(handler.Handlers)
 
 	log.Println("end main")
 }

@@ -15,15 +15,7 @@ import (
 	"github.com/aws/aws-lambda-go/events"
 )
 
-type Processor struct {
-	r repository.ICreateUser
-}
-
-type IProcessor interface {
-	Process(ctx context.Context, request events.APIGatewayProxyRequest) *events.APIGatewayProxyResponse
-}
-
-func (p Processor) Process(ctx context.Context, request events.APIGatewayProxyRequest) *events.APIGatewayProxyResponse {
+func Process(ctx context.Context, request events.APIGatewayProxyRequest) *events.APIGatewayProxyResponse {
 	var res *events.APIGatewayProxyResponse
 	awsgo.InitialiseAWS()
 
@@ -76,7 +68,7 @@ func (p Processor) Process(ctx context.Context, request events.APIGatewayProxyRe
 		}
 	}
 
-	respAPI := p.r.CreateUser(awsgo.Ctx, request)
+	respAPI := repository.CreateUser(awsgo.Ctx, request)
 
 	if respAPI.CustomResp == nil {
 		headersResp := map[string]string{
