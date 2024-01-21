@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/MartinMGomezVega/Tech_Challenge_Stori/lambda/go/CreateUserService/pkg/handler"
+	"github.com/MartinMGomezVega/Tech_Challenge_Stori/lambda/go/UploadTransactionService/pkg/handler"
 	"github.com/aws/aws-lambda-go/lambda"
 )
 
