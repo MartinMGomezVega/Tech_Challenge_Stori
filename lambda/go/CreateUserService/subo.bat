@@ -7,4 +7,4 @@ cd cmd
 go build main.go
 cd ..
 del main.zip
-tar.exe -a -cf main.zip main
+tar.exe -a -cf main.zip build\main
