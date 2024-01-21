@@ -13,8 +13,8 @@ func main() {
 	fmt.Println("Start main")
 	r := repository.NewCreateUser()
 	p := processor.New(r)
-	handler := handler.New(p)
-	lambda.Start(handler)
+	h := handler.New(p)
+	lambda.Start(h)
 
 	fmt.Println("Start main")
 
