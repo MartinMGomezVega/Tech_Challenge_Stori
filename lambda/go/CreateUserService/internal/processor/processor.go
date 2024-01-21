@@ -19,10 +19,8 @@ type Processor struct {
 	r repository.ICreateUser
 }
 
-func New(r repository.ICreateUser) *Processor {
-	return &Processor{
-		r: r,
-	}
+type IProcessor interface {
+	Process(ctx context.Context, request events.APIGatewayProxyRequest) *events.APIGatewayProxyResponse
 }
 
 func (p Processor) Process(ctx context.Context, request events.APIGatewayProxyRequest) *events.APIGatewayProxyResponse {
