@@ -10,7 +10,7 @@ import (
 
 func Handlers(ctx context.Context, request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResponse, error) {
 
-	fmt.Print("<start> <handler> <HandleRequest> Creating the user...")
+	fmt.Print("<start> <handler> <HandleRequest> Uploading the .csv file to Bucket S3...")
 
 	res := processor.Process(ctx, request)
 
