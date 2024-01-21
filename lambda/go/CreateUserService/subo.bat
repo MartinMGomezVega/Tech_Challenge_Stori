@@ -11,5 +11,5 @@ cd ..
 
 del main.zip
 
-"C:\Program Files\Git\bin\tar.exe" -a -cf main.zip cmd/main
+tar.exe -a -cf main.zip cmd/main
 
