@@ -13,6 +13,8 @@ zip:
 	cd ${BUILD_FOLDER}; \
 	zip ${LAMBDA_NAME}.zip ${BINARY_NAME}
 
+
+
 build:
 	mkdir -p ${BUILD_FOLDER}; \
 	cd ${BUILD_FOLDER}; \
