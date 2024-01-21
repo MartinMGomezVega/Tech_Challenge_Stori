@@ -8,7 +8,7 @@ import (
 	"github.com/aws/aws-lambda-go/events"
 )
 
-func Handlers(ctx context.Context, request events.APIGatewayProxyRequest) *events.APIGatewayProxyResponse {
+func Handlers(ctx context.Context, request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResponse, error) {
 
 	fmt.Print("<start> <handler> <HandleRequest> Creating the user...")
 
@@ -16,5 +16,5 @@ func Handlers(ctx context.Context, request events.APIGatewayProxyRequest) *event
 
 	fmt.Print("<end> <handler> <HandleRequest> End Handlers.")
 
-	return res
+	return res, nil
 }
