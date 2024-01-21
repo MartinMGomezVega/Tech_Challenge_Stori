@@ -1,4 +1,4 @@
-module github.com/MartinMGomezVega/Tech_Challenge_Stori
+module github.com/MartinMGomezVega/Tech_Challenge_Stori/lambda/go/CreateUser
 
 go 1.19
 
