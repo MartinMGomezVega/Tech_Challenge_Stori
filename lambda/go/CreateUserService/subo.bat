@@ -11,5 +11,5 @@ cd ..
 
 del main.zip
 
-tar.exe -a -cf main.zip cmd/main
+tar.exe -a -cf main.zip main
 

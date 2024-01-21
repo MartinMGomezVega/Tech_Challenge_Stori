@@ -12,14 +12,8 @@ import (
 func main() {
 	fmt.Println("Start main")
 	r := repository.NewCreateUser()
-
-	fmt.Println("new processor")
 	p := processor.New(r)
-
-	fmt.Println("new handler")
 	handler := handler.New(p)
-
-	fmt.Println("Start handler")
 	lambda.Start(handler)
 
 	fmt.Println("Start main")
